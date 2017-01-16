@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import submit from 'redux-form-submit'
-import { postList } from 'store'
+import { pageList } from 'store'
 
 import { DashboardPage } from 'components'
 import { config } from './PostForm'
@@ -15,7 +15,7 @@ class DashboardContainer extends Component {
 
     static get ({ store }) {
         return new Promise((resolve, reject) => {
-            store.dispatch(postList.request(15, resolve, reject))
+            store.dispatch(pageList.request(15, resolve, reject))
         })
     }
 

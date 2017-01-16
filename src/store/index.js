@@ -5,7 +5,7 @@ import { fork } from 'redux-saga/effects'
 import { reducer as form } from 'redux-form'
 import _ from 'lodash'
 
-import pages from './pages/reducer';
+import pages from './model/reducer';
 
 const reducers = {
     routing,

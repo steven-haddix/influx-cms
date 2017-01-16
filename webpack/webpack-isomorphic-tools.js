@@ -1,6 +1,7 @@
 var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
 
 var config = {
+    patch_require: true,
     webpack_assets_file_path: 'webpack/webpack-assets.json',
     assets: {
         images: {

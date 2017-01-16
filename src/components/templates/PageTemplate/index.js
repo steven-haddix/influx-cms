@@ -3,20 +3,46 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  flex-direction: column;
+  padding-top: 3.75rem;
+  min-height: 100vh;
+  box-sizing: border-box;
 `
 
-const PageTemplate = ({ children, ...props }) => {
+const Header = styled.header`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+`
+
+const Hero = styled.section``
+
+const Content = styled.section`
+  width: 100%;
+  box-sizing: border-box;
+  margin: 2rem auto;
+  max-width: 920px;
+`
+
+const Footer = styled.footer`
+  margin-top: auto;
+`
+
+const PageTemplate = ({ header, hero, children, footer, ...props }) => {
     return (
-        <Wrapper {...props}>{children}</Wrapper>
+        <Wrapper {...props}>
+            <Header>{header}</Header>
+            <Content>{children}</Content>
+            <Footer>{footer}</Footer>
+        </Wrapper>
     )
 }
 
 PageTemplate.propTypes = {
-    children: PropTypes.any.isRequired
+    header: PropTypes.any.isRequired,
+    children: PropTypes.any.isRequired,
+    footer: PropTypes.any.isRequired
 }
 
 export default PageTemplate

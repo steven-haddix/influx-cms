@@ -5,7 +5,16 @@
         "stage-1"
     ],
     "plugins": [
+        "babel-plugin-syntax-decorators",
+        "transform-decorators-legacy",
         "transform-async-to-generator",
         "react-hot-loader/babel"
-    ]
+    ],
+    "env": {
+        "production": {
+            "plugins": [
+                "transform-react-remove-prop-types"
+            ]
+        }
+    }
 }

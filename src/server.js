@@ -76,9 +76,14 @@ server.use(async (ctx, next) => {
             ctx.body = doctype + html;
         }
 
-        fetchData();
-        render(configureStore(store.getState(), memoryHistory));
-        next;
+        try {
+            fetchData();
+            render(configureStore(store.getState(), memoryHistory));
+        } catch(err) {
+            console.log(err)
+            next()
+        }
+        next();
     })
 });
 
